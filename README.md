@@ -798,17 +798,18 @@ $$
 
 If availability is 99.00% available, it is said to have "2 nines" of availability, and if it is 99.9%, it is called "3 nines", and so on.
 
-| Availability (Percent)   | Downtime (Year)    | Downtime (Month)  | Downtime (Week)    |
-| ------------------------ | ------------------ | ----------------- | ------------------ |
-| 90% (one nine)           | 36.53 days         | 72 hours          | 16.8 hours         |
-| 99% (two nines)          | 3.65 days          | 7.20 hours        | 1.68 hours         |
-| 99.9% (three nines)      | 8.77 hours         | 43.8 minutes      | 10.1 minutes       |
-| 99.99% (four nines)      | 52.6 minutes       | 4.32 minutes      | 1.01 minutes       |
-| 99.999% (five nines)     | 5.25 minutes       | 25.9 seconds      | 6.05 seconds       |
-| 99.9999% (six nines)     | 31.56 seconds      | 2.59 seconds      | 604.8 milliseconds |
-| 99.99999% (seven nines)  | 3.15 seconds       | 263 milliseconds  | 60.5 milliseconds  |
-| 99.999999% (eight nines) | 315.6 milliseconds | 26.3 milliseconds | 6 milliseconds     |
-| 99.9999999% (nine nines) | 31.6 milliseconds  | 2.6 milliseconds  | 0.6 milliseconds   |
+| Availability              | Downtime per year | Downtime per month | Practicality                                                                                                                    |
+| ------------------------- | ----------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| **90% (1 nine)**          | \~36.5 days       | \~72 hours         | Only acceptable for non-critical apps (dev/test, internal tools). Not suitable for customer-facing systems.                     |
+| **99% (2 nines)**         | \~3.65 days       | \~7 hours 18 min   | Okay for small businesses or apps where downtime has little impact. Still painful for serious services.                         |
+| **99.9% (3 nines)**       | \~8.76 hours      | \~43 min           | Sweet spot for most SaaS/web apps. Achievable with redundancy, monitoring, and basic failover.                                  |
+| **99.99% (4 nines)**      | \~52.6 min        | \~4.3 min          | Serious investment needed (multi-region, active failover, automated recovery). Typical target for banking, e-commerce checkout. |
+| **99.999% (5 nines)**     | \~5.26 min        | \~26 sec           | Very hard. Requires geo-redundancy, real-time monitoring, and rapid failover. Used in telecom, payments, healthcare.            |
+| **99.9999% (6 nines)**    | \~31.5 sec        | \~2.6 sec          | Nearly impossible at app level. Only in highly specialized, regulated systems (aerospace, nuclear, defense).                    |
+| **99.99999% (7 nines)**   | \~3.15 sec        | \~0.26 sec         | Theoretical for most apps. Cost outweighs benefits. Hardware and human error make this unrealistic.                             |
+| **99.999999% (8 nines)**  | \~0.315 sec       | \~26 ms            | Practically impossible outside of theoretical or marketing claims.                                                              |
+| **99.9999999% (9 nines)** | \~31.5 ms         | \~2.6 ms           | Physically unachievable for user-facing apps. Network jitter alone breaks this.                                                 |
+
 
 ## Availability in Sequence vs Parallel
 
